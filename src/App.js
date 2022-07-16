@@ -17,12 +17,19 @@ const[updateData, setUpdateData] = useState('')
 
 // Add Task
 const addTask = () =>{
-
+  if(newTask) {
+  let num = toDo.length +1
+  let newEntry = { id : num, title : newTask, status : false}
+  setToDo([...toDo,newEntry]) 
+  
+  setNewTask('')
+}
 }
 
 // Delete Task
 const deleteTask = (id) =>{
-
+  let newTasks = toDo.filter(task => task.id !== id)
+  setToDo(newTasks)
 }
 
 // mark task as done or completed
@@ -108,7 +115,10 @@ const updateTask = () => {
             <span title="Edit">
               <FontAwesomeIcon icon={faPen}/>
             </span>
-            <span title="Edit">
+            <span title="Delete"
+            
+             onClick={()=>deleteTask(task.id)} >
+              
               <FontAwesomeIcon icon={faTrashCan}/>
 
             </span>
