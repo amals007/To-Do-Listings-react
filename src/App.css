@@ -1,13 +1,17 @@
 .App {
   text-align: center;
 }
-
-body{
-    background-color: #333;
-    color: #fff;
+html, body{
+  height: 100%;
+  background: linear-gradient(to top, #fcfcfc, #cfd7a0);
 }
+
+/* body{
+    background-color: rgb(8, 11, 11);
+    color: #fff;
+} */
 .taskBg{
-background-color: #555;
+background-color: rgb(39, 41, 42);
 border-radius: 6px;
 margin-bottom: 20px;
 padding: 10px 140px 10px 15px;
@@ -21,7 +25,7 @@ position: relative;
 }
 
 .taskNumber{
-  color: #999;
+  color: #fff;
   border: 1px solid #999;
   border-radius: 50%;
   width: 26px;
@@ -35,9 +39,11 @@ position: relative;
 }
 .taskBg .taskText{
   flex: 1;
+  color: #fff;
 
 }
 .taskBg .done .taskText{
+  color: #fff;
   text-decoration: line-through;
   opacity: 0.3;
 
@@ -62,5 +68,8 @@ position: relative;
 }
 .mr-20{
   margin-right: 20px;
+}
+.cancelButton{
+  margin-left:10px;
 }
 
