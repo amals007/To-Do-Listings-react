@@ -89,7 +89,7 @@ function App() {
         />
       )}
 
-      {toDo && toDo.length ? "" : "No Tasks"}
+     
       <ToDo
         toDo={toDo}
         // markDone={markDone}

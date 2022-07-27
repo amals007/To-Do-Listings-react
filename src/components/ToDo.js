@@ -1,12 +1,12 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faCircleCheck,
+  
   faPen,
   faTrashCan,
 } from "@fortawesome/free-solid-svg-icons";
 
-function ToDo({ toDo, markDone, setUpdateData, deleteTask }) {
+function ToDo({ toDo, setUpdateData, deleteTask }) {
   return (
     <>
       {toDo &&
@@ -14,42 +14,47 @@ function ToDo({ toDo, markDone, setUpdateData, deleteTask }) {
           .sort((a, b) => (a.id > b.id ? 1 : -1))
           .map((task, index) => {
             return (
-              <React.Fragment id={task.id}>
-                <div className="col taskBg">
-                  {/* <div className={task.status ? "done" : ""}> */}
-
-                  <div>
-                    <span className="taskNumber">{index + 1}</span>
-                    <span className="taskText">{task.title}</span>
-                  </div>
-                  <div className="iconsWrap">
-                    {/* <span
-                      title="Completed / Not Completed"
-                      onClick={() => markDone(task.id)}
-                    >
-                      <FontAwesomeIcon icon={faCircleCheck} />
-                    </span> */}
-                    {task.status ? null : (
-                      <span
-                        title="Edit"
-                        onClick={() =>
-                          setUpdateData({
-                            id: task.id,
-                            title: task.title,
-                            status: task.status ? true : false,
-                          })
-                        }
+              <div  id={task.id}>
+               <div className="row">
+                  <div className="col-4"></div>
+                  <div className="taskBg col-4">
+                    {/* <div className={task.status ? "done" : ""}> */}
+  
+                    <div>
+                      <span className="taskNumber">{index + 1}</span>
+                      <span className="taskText">{task.title}</span>
+                    </div>
+                    <div className="iconsWrap">
+                      {/* <span
+                        title="Completed / Not Completed"
+                        onClick={() => markDone(task.id)}
                       >
-                        <FontAwesomeIcon className="fontAwesomeIconColor" icon={faPen} />
+                        <FontAwesomeIcon icon={faCircleCheck} />
+                      </span> */}
+                      {task.status ? null : (
+                        <span
+                          title="Edit"
+                          onClick={() =>
+                            setUpdateData({
+                              id: task.id,
+                              title: task.title,
+                              status: task.status ? true : false,
+                            })
+                          }
+                        >
+                          <FontAwesomeIcon className="fontAwesomeIconColor" icon={faPen} />
+                        </span>
+                      )}
+  
+                      <span title="Delete" onClick={() => deleteTask(task.id)}>
+                        <FontAwesomeIcon className="fontAwesomeIconColor" icon={faTrashCan} />
                       </span>
-                    )}
-
-                    <span title="Delete" onClick={() => deleteTask(task.id)}>
-                      <FontAwesomeIcon className="fontAwesomeIconColor" icon={faTrashCan} />
-                    </span>
+                    </div>
                   </div>
-                </div>
-              </React.Fragment>
+                  <div className="col-4"></div>
+                  
+               </div>
+              </div>
             );
           })}
     </>
