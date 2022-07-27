@@ -3,7 +3,7 @@
 }
 html, body{
   height: 100%;
-  background: linear-gradient(to top, #fcfcfc, #cfd7a0);
+  background: linear-gradient(to top, #fcfcfc, #a6a6a4);
 }
 
 /* body{
@@ -11,7 +11,7 @@ html, body{
     color: #fff;
 } */
 .taskBg{
-background-color: rgb(39, 41, 42);
+background-color: white;
 border-radius: 6px;
 margin-bottom: 20px;
 padding: 10px 140px 10px 15px;
@@ -25,7 +25,7 @@ position: relative;
 }
 
 .taskNumber{
-  color: #fff;
+  color: black;
   border: 1px solid #999;
   border-radius: 50%;
   width: 26px;
@@ -39,15 +39,15 @@ position: relative;
 }
 .taskBg .taskText{
   flex: 1;
-  color: #fff;
+  color: black;
 
 }
-.taskBg .done .taskText{
+/* .taskBg .done .taskText{
   color: #fff;
   text-decoration: line-through;
   opacity: 0.3;
 
-}
+} */
 .taskBg .iconsWrap{
   position: absolute;
   top: 50%;
@@ -72,4 +72,7 @@ position: relative;
 .cancelButton{
   margin-left:10px;
 }
-
+/* FONT AWESOME ICON COLOR */
+.fontAwesomeIconColor{
+  color: #0d6efd
+}

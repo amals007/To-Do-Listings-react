@@ -31,17 +31,17 @@ function App() {
   };
 
   // mark task as done or completed
-  const markDone = (id) => {
-    let newTasks = toDo.map((task) => {
-      if (task.id === id) {
-        console.log({ ...task, status: !task.status });
-        return { ...task, status: !task.status };
-      }
+  // const markDone = (id) => {
+  //   let newTasks = toDo.map((task) => {
+  //     if (task.id === id) {
+  //       console.log({ ...task, status: !task.status });
+  //       return { ...task, status: !task.status };
+  //     }
 
-      return task;
-    });
-    setToDo(newTasks);
-  };
+  //     return task;
+  //   });
+  //   setToDo(newTasks);
+  // };
 
   // cancel Update
   const cancelUpdate = (id) => {
@@ -92,7 +92,7 @@ function App() {
       {toDo && toDo.length ? "" : "No Tasks"}
       <ToDo
         toDo={toDo}
-        markDone={markDone}
+        // markDone={markDone}
         setUpdateData={setUpdateData}
         deleteTask={deleteTask}
       />

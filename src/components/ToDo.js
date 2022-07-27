@@ -16,17 +16,19 @@ function ToDo({ toDo, markDone, setUpdateData, deleteTask }) {
             return (
               <React.Fragment id={task.id}>
                 <div className="col taskBg">
-                  <div className={task.status ? "done" : ""}>
+                  {/* <div className={task.status ? "done" : ""}> */}
+
+                  <div>
                     <span className="taskNumber">{index + 1}</span>
                     <span className="taskText">{task.title}</span>
                   </div>
                   <div className="iconsWrap">
-                    <span
+                    {/* <span
                       title="Completed / Not Completed"
                       onClick={() => markDone(task.id)}
                     >
                       <FontAwesomeIcon icon={faCircleCheck} />
-                    </span>
+                    </span> */}
                     {task.status ? null : (
                       <span
                         title="Edit"
@@ -38,12 +40,12 @@ function ToDo({ toDo, markDone, setUpdateData, deleteTask }) {
                           })
                         }
                       >
-                        <FontAwesomeIcon icon={faPen} />
+                        <FontAwesomeIcon className="fontAwesomeIconColor" icon={faPen} />
                       </span>
                     )}
 
                     <span title="Delete" onClick={() => deleteTask(task.id)}>
-                      <FontAwesomeIcon icon={faTrashCan} />
+                      <FontAwesomeIcon className="fontAwesomeIconColor" icon={faTrashCan} />
                     </span>
                   </div>
                 </div>

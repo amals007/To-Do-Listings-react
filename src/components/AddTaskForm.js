@@ -12,7 +12,7 @@ function AddTaskForm({ newTask, setNewTask, addTask }) {
             />
           </div>
           <div className="col-auto">
-            <button onClick={addTask} className="btn btn-lg btn-success">
+            <button onClick={addTask} className="btn btn-lg btn-primary">
               Add Task
             </button>
           </div>
