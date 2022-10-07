@@ -44,12 +44,12 @@ position: relative;
   
 
 }
-/* .taskBg .done .taskText{
-  color: #fff;
+.taskBg .done .taskText{
+  
   text-decoration: line-through;
   opacity: 0.3;
 
-} */
+}
 .taskBg .iconsWrap{
   position: absolute;
   top: 50%;
@@ -63,7 +63,7 @@ position: relative;
   display: inline-block;
   margin: 0px 10px 0 10px;
   cursor: pointer;
-  color: #00ff89;
+  color: #0d6efd;
 }
 .taskBg .iconsWrap span :hover{
   color: yellow;

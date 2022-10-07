@@ -7,7 +7,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
 function App() {
-  const [toDo, setToDo] = useState([]);
+  const [toDo, setToDo] = useState([
+  {"id": 1, 'title': 'Task 1', "status": false},
+  {"id": 2, 'title': 'Task 2', "status": false}
+]);
 
   // Temp State
   const [newTask, setNewTask] = useState("");
@@ -19,7 +22,7 @@ function App() {
       let num = toDo.length + 1;
       let newEntry = { id: num, title: newTask, status: false };
       setToDo([...toDo, newEntry]);
-
+localStorage.setItem(toDo)
       setNewTask("");
     }
   };
@@ -31,17 +34,17 @@ function App() {
   };
 
   // mark task as done or completed
-  // const markDone = (id) => {
-  //   let newTasks = toDo.map((task) => {
-  //     if (task.id === id) {
-  //       console.log({ ...task, status: !task.status });
-  //       return { ...task, status: !task.status };
-  //     }
+  const markDone = (id) => {
+    let newTasks = toDo.map((task) => {
+      if (task.id === id) {
+        console.log({ ...task, status: !task.status });
+        return { ...task, status: !task.status };
+      }
 
-  //     return task;
-  //   });
-  //   setToDo(newTasks);
-  // };
+      return task;
+    });
+    setToDo(newTasks);
+  };
 
   // cancel Update
   const cancelUpdate = (id) => {
@@ -92,7 +95,7 @@ function App() {
      
       <ToDo
         toDo={toDo}
-        // markDone={markDone}
+        markDone={markDone}
         setUpdateData={setUpdateData}
         deleteTask={deleteTask}
       />
